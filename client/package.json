@@ -1,0 +1,22 @@
+{
+  "name": "agtechclient",
+  "version": "1.0.0",
+  "description": "App for publish, subscribe event, command to ibm watson iot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cloudant": "^1.4.1",
+    "ibmiotf": "0.2.11",
+    "mqtt": "1.5.0",
+    "properties": "1.2.1"
+  },
+  "keywords": [
+    "bluemix",
+    "mqtt",
+    "arduino"
+  ],
+  "author": "Cuong Nguyen (vietcuonghn3@gmail.com)",
+  "license": "ISC"
+}
