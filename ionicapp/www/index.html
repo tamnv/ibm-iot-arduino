@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    
+  </head>
+
+  <body ng-app="ionicApp">
+    
+    <ion-nav-bar class="bar-calm">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+             
+    <ion-nav-view></ion-nav-view>
+
+
+    <script id="templates/tabs.html" type="text/ng-template">
+      <ion-tabs class="tabs-icon-top tabs-calm">
+
+        <ion-tab title="Dashboard" icon-off="ion-ios-speedometer-outline" icon-on="ion-ios-speedometer" icon="ion-ios-speedometer-outline" href="#/tab/home">
+          <ion-nav-view name="home-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Chart" icon-off="ion-ios-analytics-outline" icon-on="ion-ios-analytics" icon="ion-ios-analytics-outline" href="#/tab/chart">
+          <ion-nav-view name="chart-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="About" icon="ion-ios-world" href="#/tab/about">
+          <ion-nav-view name="about-tab"></ion-nav-view>
+        </ion-tab>
+
+      </ion-tabs>
+    </script>
+
+    <script id="templates/home.html" type="text/ng-template">
+      <ion-view view-title="Dashboard" hide-nav-bar="false">
+        <ion-content class="dashboard">    
+          <div class=" dash-icon dash-icon-soil-moisture">
+            <a class="link" href="#/tab/dash-soil">{{sensors.soilmoisture}}%</a>
+          </div>
+          <div class=" dash-icon dash-icon-humidity">
+            <a class="link">{{sensors.humidity}}%</a>
+          </div>
+          <div class=" dash-icon dash-icon-light">
+            <a class="link" href="#/tab/dash-light">{{sensors.light}}%</a>
+          </div>
+          <div class=" dash-icon dash-icon-temperature">
+            <a class="link" href="#/tab/dash-temp">{{sensors.temp}}<sup>o</sup></a>
+          </div>
+          <div class=" dash-icon dash-icon-projects">
+            <a href="#/tab/dash-prj-list" class="project-list-link link">
+              &nbsp;&nbsp;&nbsp;&nbsp;
+            </a>
+          </div>
+          <div class=" dash-icon dash-icon-maps">
+            <a href="#/tab/dash-location" class="project-list-link link">
+              &nbsp;&nbsp;&nbsp;&nbsp;
+            </a>
+          </div>
+          
+          
+        </ion-content>
+      </ion-view>
+      
+    </script>
+    
+    <script id="templates/dash-soil.html" type="text/ng-template">
+      <ion-view view-title="Soil Moisture" hide-nav-bar="false">
+        <ion-content class="dashboard-soil">          
+        </ion-content>
+      </ion-view>      
+    </script>
+    <script id="templates/dash-prj-addnew.html" type="text/ng-template">
+      <ion-view view-title="New Project">
+        <ion-content class="dashboard-prj-add-qrcode">          
+        </ion-content>
+      </ion-view>      
+    </script>
+
+    <script id="templates/dash-prj1-detail.html" type="text/ng-template">
+      <ion-view view-title="Project tomato">
+        <ion-content class="dashboard-prj1-trees">          
+        </ion-content>
+      </ion-view>      
+    </script>
+
+    <script id="templates/dash-prj-list.html" type="text/ng-template">
+      <ion-view view-title="Project list">
+        <ion-content class="dashboard-prj-list">
+          <a href="#/tab/dash-prj1-detail" class="project-detail1 link">&nbsp;&nbsp;</a>
+          <a href="#/tab/dash-prj-addnew" class="project-list-addnew link">&nbsp;&nbsp;</a>
+        </ion-content>
+      </ion-view>      
+    </script>
+
+    <script id="templates/dash-light.html" type="text/ng-template">
+      <ion-view view-title="Light">
+        <ion-content class="dashboard-light">          
+        </ion-content>
+      </ion-view>      
+    </script>
+
+    <script id="templates/dash-temp.html" type="text/ng-template">
+      <ion-view view-title="Temperature">
+        <ion-content class="dashboard-temperature">
+          
+        </ion-content>
+      </ion-view>
+      
+    </script>
+
+    <script id="templates/dash-location.html" type="text/ng-template">
+      <ion-view view-title="Map">
+        <ion-content class="dashboard-location">
+          
+        </ion-content>
+      </ion-view>
+      
+    </script>
+
+    <script id="templates/facts.html" type="text/ng-template">
+      <ion-view view-title="Facts">
+        <ion-content class="padding">
+          <p>Banging your head against a wall uses 150 calories an hour.</p>
+          <p>Dogs have four toes on their hind feet, and five on their front feet.</p>
+          <p>The ant can lift 50 times its own weight, can pull 30 times its own weight and always falls over on its right side when intoxicated.</p>
+          <p>A cockroach will live nine days without it's head, before it starves to death.</p>
+          <p>Polar bears are left handed.</p>
+          <p>
+            <a class="button icon ion-home" href="#/tab/home"> Home</a>
+            <a class="button icon icon-right ion-chevron-right" href="#/tab/facts2">More Facts</a>
+          </p>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/facts2.html" type="text/ng-template">
+      <ion-view view-title="Also Factual">
+        <ion-content class="padding">
+          <p>111,111,111 x 111,111,111 = 12,345,678,987,654,321</p>
+          <p>1 in every 4 Americans has appeared on T.V.</p>
+          <p>11% of the world is left-handed.</p>
+          <p>1 in 8 Americans has worked at a McDonalds restaurant.</p>
+          <p>$283,200 is the absolute highest amount of money you can win on Jeopardy.</p>
+          <p>101 Dalmatians, Peter Pan, Lady and the Tramp, and Mulan are the only Disney cartoons where both parents are present and don't die throughout the movie.</p>
+          <p>
+            <a class="button icon ion-home" href="#/tab/home"> Home</a>
+            <a class="button icon ion-chevron-left" href="#/tab/facts"> Scientific Facts</a>
+          </p>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/about.html" type="text/ng-template">
+      <ion-view view-title="About">
+        <ion-content class="padding">
+          <h3>Created by Cobri developer team.</h3>          
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/nav-stack.html" type="text/ng-template">
+      <ion-view view-title="Tab Nav Stack">
+        <ion-content class="padding">
+          <p><img src="http://ionicframework.com/img/diagrams/tabs-nav-stack.png" style="width:100%"></p>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/contact.html" type="text/ng-template">
+      <ion-view title="Contact">
+        <ion-content>
+          <div class="list">
+            <div class="item">
+              @IonicFramework
+            </div>
+            <div class="item">
+              @DriftyTeam
+            </div>
+          </div>
+        </ion-content>
+      </ion-view>
+    </script>
+
+  </body>
+  
+</html>
